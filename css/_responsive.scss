@@ -1,0 +1,150 @@
+@media screen and (max-width: 1150px) {
+  header {
+    #carousel {
+      overflow: hidden;
+
+      #carousel-wrapper {
+
+        .carousel-content {
+          margin-top: 1%;
+          height: 310px;
+
+          .carousel-text {
+          margin-left: 1%;
+          max-width: 50%;
+          }
+
+          .carousel-button {
+            position: static;
+            display:inline-block;
+            margin: 7% 0 0 5%;
+          }
+        }
+      }
+    }
+
+    .arrows {
+      @include size(15px, 27px);
+      top: 85%;
+    }
+
+    #arrow-left {
+      position: absolute;
+      left: 37px;
+
+      &:hover {
+        background-position: -15px 0;
+      }
+    }
+
+    #arrow-right {
+      background-position: -45px 0;
+      position: absolute;
+      right: 37px;
+
+      &:hover {
+        background-position: -30px 0;
+      }
+    }
+  }
+
+  section {
+    #container-article2 {
+      width: 94%;
+      text-align: center;
+
+      .article2, .article3 {
+        margin: auto;
+        float: none;
+        padding: 0;
+        display: block;
+        text-align: justify;
+      }
+    }
+  }
+
+  header ~ p {
+    padding: 30px 0;
+    text-align: center;
+    @include fonts(600, 14px);
+
+    span {
+      margin: 0 0 5px 0;
+      display: block;
+      text-align: center;
+    }
+
+    a {
+      margin: 5px 0 0 0;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+
+  nav {
+    ul{
+      display: none;
+      float: none;
+      margin: auto;
+
+      li {
+        display: block;
+        float: none;
+        border-bottom: 1px solid $orange;
+        text-align: center;
+      }
+    }
+
+    #collapse {
+      display: inline-block;
+    }
+  }
+
+header {
+  #carousel {
+    #carousel-wrapper {
+      .carousel-content {
+        .carousel-text {
+          width: 20%;
+          text-align: justify;
+
+          h2 {
+            font-size: 22px;
+            text-shadow: none;
+          }
+        }
+        .carousel-button {
+          position: static;
+          display:inline-block;
+          margin: 2% 0 0 1%;
+        }
+      }
+    }
+  }
+}
+  section {
+    #container-article1 {
+      text-align: justify;
+
+      img {
+        width: 100%;
+        float: none;
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .graph {
+      display: none;
+    }
+
+    #graphs-full {
+      width: 90%;
+      margin: auto;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,514 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+$orange: #e84d0f;
+$graph1: #ffc59b;
+$graph2: #f88c6c;
+$graph3: #e64e21;
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fonts($weight, $size) {
+  font-family: "Open Sans", sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin topContainer {
+  @include fonts(400, 16px);
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+}
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@mixin column($height, $color) {
+  height: $height;
+  background-color: $color;
+}
+
+//////////////////////////GLOBAL
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $orange;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.active {
+  display: block;
+}
+
+////////////////////////// NAVIGATION
+
+nav {
+  @include topContainer;
+  width: 94%;
+  padding-top: 10px;
+
+  &::after {
+    @include clearfix;
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      padding: 12px;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        color: $orange;
+        border-bottom: 1px solid $orange;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #collapse {
+    border: 1px solid #666;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 22px;
+
+    .line {
+      @include size(20px, 2px);
+      display: block;
+      background-color: $orange;
+      margin: 3px 2px;
+    }
+  }
+} //End nav
+
+//////////////////////////HEADER
+
+header {
+@include topContainer;
+width: 100%;
+height: 454px;
+max-height: 454px;
+background: url("../img/rotator/carousel-bg.jpg") no-repeat center;
+background-size: cover;
+margin-top: 30px;
+overflow: visible;
+
+  &:hover {
+    background: url("../img/rotator/carousel-hover.jpg") no-repeat center;
+  }
+
+  .arrows {
+    @include size(30px, 54px);
+    background: url("../img/rotator/arrows.png") no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    top: 43.8%;
+    z-index: 999;
+  }
+
+  #arrow-left {
+    position: absolute;
+    left: 37px;
+
+    &:hover {
+      background-position: -30px 0;
+    }
+  }
+
+  #arrow-right {
+    background-position: -90px 0;
+    position: absolute;
+    right: 37px;
+
+    &:hover {
+      background-position: -60px 0;
+    }
+  }
+
+  #carousel {
+    width: 100%;
+    overflow: hidden;
+
+    #carousel-wrapper {
+      width: 3900px;
+      margin-left: -1300px;
+
+
+      .carousel-content {
+        width: 1300px;
+        position: relative;
+        height: 290px;
+        float: left;
+        margin-top: 95px;
+
+        .carousel-text {
+          @include fonts(300, 18px);
+          max-width: 630px;
+          margin-left: 190px;
+
+          h2 {
+            @include fonts(400, 45px);
+            text-shadow: 2px 2px 2px #666;
+          }
+
+          .carousel-para1 {
+            margin-top: 40px;
+          }
+
+          .carousel-para2 {
+            margin-top: 30px;
+          }
+        }
+
+        .carousel-button {
+          position: absolute;
+          right: 160px;
+          bottom: 0;
+          padding: 14px 69px;
+          border: 1px solid $orange;
+          border-radius: 46px;
+          background-color: #fff;
+          color: $orange;
+
+          &:hover {
+            background-color: $orange;
+            color: #fff;
+          }
+        }
+      } //end content
+    }//end wrapper
+  }//end carousel
+} //End heder
+
+header ~ p {
+  padding: 30px 0;
+  text-align: center;
+  @include fonts(600, 14px);
+
+  span {
+    margin-right: 5px;
+    @include fonts(300, 12px);
+    color: #666;
+  }
+
+  a {
+    margin-left: 20px;
+  }
+}
+
+  ////////////////////////// CONTENT
+
+section {
+  @include fonts(400, 17px);
+  background-color: #f2f2f2;
+  margin-bottom: 35px;
+  padding-bottom: 35px;
+
+  #graphs-full {
+    display: none;
+  }
+
+  #tooltip1 {
+    position: relative;
+    border-bottom: 2px dashed $orange;
+
+    &:hover::before {
+      content: "espresso!";
+      background-color: #464646;
+      padding: 4px 20px;
+      position: absolute;
+      bottom: 100%;
+      color: white;
+      border-radius: 3px;
+    }
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      right: 45px;
+      width:0;
+      height: 0;
+      border-top: 8px solid #464646;
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+  }
+  }
+
+  #container-article1 {
+    width: 94%;
+    max-width: 990px;
+    margin: auto;
+
+    &:after {
+      @include clearfix;
+    }
+
+    h1 {
+      padding: 30px 0;
+      font-size: 38px;
+      font-weight: 300;
+      display: block;
+    }
+
+    img {
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    #float-p {
+      float: left;
+
+      &:after {
+        @include clearfix;
+      }
+    }
+
+    p {
+      padding-bottom: 30px;
+    }
+  } //end container article
+
+  .graph {
+    width: 540px;
+    margin: auto;
+
+    h2 {
+      font-size: 18px;
+      padding: 60px 0 40px 40px;
+    }
+
+    img[alt="logo"] {
+      float: left;
+      padding: 19px 10px 0 0;
+    }
+
+    .columns {
+      @include size(495px, 76px);
+      font-size: 0;
+      float: left;
+
+      .column-round {
+        width: 17px;
+        margin-bottom: -76px;
+        display: inline-block;
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+        cursor: pointer;
+      }
+
+      .column {
+        @extend .column-round;
+        border-radius: 0px;
+
+        &:hover {
+          background-color: #666;
+          transition: background-color 0.25s linear;
+        }
+      }
+
+      [data-index="1"] {
+        @include column(25px, $graph1);
+      }
+      [data-index="2"] {
+        @include column(41px, $graph2);
+      }
+      [data-index="3"] {
+        @include column(41px, $graph2);
+      }
+      [data-index="4"] {
+        @include column(36px, $graph2);
+      }
+      [data-index="5"] {
+        @include column(12px, $graph1);
+      }
+      [data-index="6"] {
+        @include column(22px, $graph1);
+      }
+      [data-index="7"] {
+        @include column(36px, $graph2);
+      }
+      [data-index="8"] {
+        @include column(66px, $graph3);
+      }
+      [data-index="9"] {
+        @include column(61px, $graph3);
+      }
+      [data-index="10"] {
+        @include column(51px, $graph3);
+      }
+      [data-index="11"] {
+        @include column(39px, $graph2);
+      }
+      [data-index="12"] {
+        @include column(37px, $graph2);
+      }
+      [data-index="13"] {
+        @include column(34px, $graph2);
+      }
+      [data-index="14"] {
+        @include column(20px, $graph1);
+      }
+      [data-index="15"] {
+        @include column(26px, $graph1);
+      }
+      [data-index="16"] {
+        @include column(39px, $graph1);
+      }
+      [data-index="17"] {
+        @include column(34px, $graph2);
+      }
+      [data-index="18"] {
+        @include column(58px, $graph3);
+      }
+      [data-index="19"] {
+        @include column(45px, $graph3);
+      }
+      [data-index="20"] {
+        @include column(54px, $graph3);
+      }
+      [data-index="21"] {
+        @include column(54px, $graph3);
+      }
+      [data-index="22"] {
+        @include column(39px, $graph2);
+      }
+      [data-index="23"] {
+        @include column(39px, $graph2);
+      }
+      [data-index="24"] {
+        @include column(32px, $graph1);
+      }
+      [data-index="25"] {
+        @include column(48px, $graph3);
+      }
+      [data-index="26"] {
+        @include column(38px, $graph1);
+      }
+      [data-index="27"] {
+        @include column(32px, $graph1);
+      }
+      [data-index="28"] {
+        @include column(25px, $graph1);
+      }
+      [data-index="29"] {
+        @include column(17px, $graph1);
+      }
+    } //end columns
+
+    .legend {
+      text-align: center;
+
+      p {
+        display: inline-block;
+        font-size: 13px;
+      }
+
+      .low::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        margin: 0 5px 0 25px;
+        border-radius: 100%;
+        background-color: $graph1;
+      }
+
+      .medium::before {
+        @extend .low::before;
+        background-color: $graph2;
+      }
+
+      .high::before{
+        @extend .low::before;
+        background-color: $graph3;
+      }
+    }
+  } // end graph
+
+  #container-article2 {
+    width: 94%;
+    max-width: 960px;
+    display: block;
+    margin: auto;
+
+    &::after {
+      @include clearfix;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 38px;
+      font-weight: 400;
+    }
+
+    .article2 {
+      max-width: 480px;
+      padding-right: 60px;
+      float: left;
+
+      p {
+        margin-top: 30px;
+      }
+    }
+
+    .article3 {
+      @extend .article2;
+      padding-right: 0;
+      padding-left: 60px;
+    }
+  }// end container-article2
+} //end section
+
+footer {
+  text-align: center;
+  @include fonts(600, 15px);
+
+  p {
+    margin-top: 17px;
+    margin-bottom: 35px;
+
+    &:nth-child(3) {
+      font-weight: 300;
+      font-size: 17px;
+    }
+  }
+
+  a {
+    margin-top: 35px;
+  }
+}
+
+@import "responsive";
