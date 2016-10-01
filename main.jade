@@ -1,0 +1,30 @@
+//output:main.html
+
+doctype 
+
+html(lang="cs")
+  head
+    meta(charset="utf-8")
+    title Etnetera
+    meta(name="keywords", content="káva, etnetera, mobile development, web development")
+    meta(name="description", content="Lorem ipsum Etnetera")
+    meta(property="og:title", content="Etnetera")
+    meta(property="og:image", content="http://www.etnetera.cz/assets/images/socials.jpg") 
+    meta(property="og:description", content="Lorem ipsum Etnetera")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="css/reset.css", rel="stylesheet") 
+    link(href="css/styles.css", rel="stylesheet")
+  body
+       
+    include ./nav.jade
+    
+    include ./carousel.jade
+    
+    include ./sectionTop.jade
+    
+    include ./graphs.jade
+    
+    include ./sectionBottom.jade
+    
+    script(src="scripts/jquery-1.11.3.js")
+    script(src="scripts/js.js")

@@ -1,114 +1,19 @@
+//////////////////////////FONTS
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
-$orange: #e84d0f;
-$graph1: #ffc59b;
-$graph2: #f88c6c;
-$graph3: #e64e21;
+//////////////////////////VARIABLES
+@import "definition/variables";
 
-@mixin size($width, $height) {
-  width: $width;
-  height: $height;
-}
+//////////////////////////FUNCTIONS
+@import "definition/functions";
 
-@mixin fonts($weight, $size) {
-  font-family: "Open Sans", sans-serif;
-  font-weight: $weight;
-  font-size: $size;
-}
 
-@mixin topContainer {
-  @include fonts(400, 16px);
-  max-width: 1300px;
-  margin: auto;
-  position: relative;
-}
-
-@mixin clearfix {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@mixin column($height, $color) {
-  height: $height;
-  background-color: $color;
-}
-
-//////////////////////////GLOBAL
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: $orange;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.active {
-  display: block;
-}
+//////////////////////////NORMALIZE
+@import "definition/normalize";
+@import "definition/utilities";
 
 ////////////////////////// NAVIGATION
-
-nav {
-  @include topContainer;
-  width: 94%;
-  padding-top: 10px;
-
-  &::after {
-    @include clearfix;
-  }
-
-  img {
-    cursor: pointer;
-  }
-
-  ul {
-    float: right;
-    list-style: none;
-
-    li {
-      float: left;
-      padding: 12px;
-      border-bottom: 1px solid transparent;
-
-      &:hover {
-        color: $orange;
-        border-bottom: 1px solid $orange;
-        cursor: pointer;
-      }
-    }
-  }
-
-  #collapse {
-    border: 1px solid #666;
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 22px;
-
-    .line {
-      @include size(20px, 2px);
-      display: block;
-      background-color: $orange;
-      margin: 3px 2px;
-    }
-  }
-} //End nav
+@import "components/navigation";
 
 //////////////////////////HEADER
 
@@ -232,11 +137,11 @@ section {
   background-color: #f2f2f2;
   margin-bottom: 35px;
   padding-bottom: 35px;
-
+//.
   #graphs-full {
     display: none;
   }
-
+//.
   #tooltip1 {
     position: relative;
     border-bottom: 2px dashed $orange;
@@ -262,7 +167,7 @@ section {
       border-bottom: 8px solid transparent;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
-  }
+    }
   }
 
   #container-article1 {
@@ -286,7 +191,7 @@ section {
       margin-right: 10px;
       margin-bottom: 10px;
     }
-
+//.containerArticle1__article
     #float-p {
       float: left;
 
@@ -338,93 +243,36 @@ section {
         }
       }
 
-      [data-index="1"] {
-        @include column(25px, $graph1);
-      }
-      [data-index="2"] {
-        @include column(41px, $graph2);
-      }
-      [data-index="3"] {
-        @include column(41px, $graph2);
-      }
-      [data-index="4"] {
-        @include column(36px, $graph2);
-      }
-      [data-index="5"] {
-        @include column(12px, $graph1);
-      }
-      [data-index="6"] {
-        @include column(22px, $graph1);
-      }
-      [data-index="7"] {
-        @include column(36px, $graph2);
-      }
-      [data-index="8"] {
-        @include column(66px, $graph3);
-      }
-      [data-index="9"] {
-        @include column(61px, $graph3);
-      }
-      [data-index="10"] {
-        @include column(51px, $graph3);
-      }
-      [data-index="11"] {
-        @include column(39px, $graph2);
-      }
-      [data-index="12"] {
-        @include column(37px, $graph2);
-      }
-      [data-index="13"] {
-        @include column(34px, $graph2);
-      }
-      [data-index="14"] {
-        @include column(20px, $graph1);
-      }
-      [data-index="15"] {
-        @include column(26px, $graph1);
-      }
-      [data-index="16"] {
-        @include column(39px, $graph1);
-      }
-      [data-index="17"] {
-        @include column(34px, $graph2);
-      }
-      [data-index="18"] {
-        @include column(58px, $graph3);
-      }
-      [data-index="19"] {
-        @include column(45px, $graph3);
-      }
-      [data-index="20"] {
-        @include column(54px, $graph3);
-      }
-      [data-index="21"] {
-        @include column(54px, $graph3);
-      }
-      [data-index="22"] {
-        @include column(39px, $graph2);
-      }
-      [data-index="23"] {
-        @include column(39px, $graph2);
-      }
-      [data-index="24"] {
-        @include column(32px, $graph1);
-      }
-      [data-index="25"] {
-        @include column(48px, $graph3);
-      }
-      [data-index="26"] {
-        @include column(38px, $graph1);
-      }
-      [data-index="27"] {
-        @include column(32px, $graph1);
-      }
-      [data-index="28"] {
-        @include column(25px, $graph1);
-      }
-      [data-index="29"] {
-        @include column(17px, $graph1);
-      }
+      @include graphColumn(25px, $graph1, 1);
+      @include graphColumn(41px, $graph2, 2);
+      @include graphColumn(41px, $graph2, 3);
+      @include graphColumn(36px, $graph2, 4);
+      @include graphColumn(12px, $graph1, 5);
+      @include graphColumn(22px, $graph1, 6);
+      @include graphColumn(36px, $graph2, 7);
+      @include graphColumn(66px, $graph3, 8);
+      @include graphColumn(61px, $graph3, 9);
+      @include graphColumn(51px, $graph3, 10);
+      @include graphColumn(39px, $graph2, 11);
+      @include graphColumn(37px, $graph2, 12);
+      @include graphColumn(34px, $graph2, 13);
+      @include graphColumn(20px, $graph1, 14);
+      @include graphColumn(26px, $graph1, 15);
+      @include graphColumn(39px, $graph1, 16);
+      @include graphColumn(34px, $graph2, 17);
+      @include graphColumn(58px, $graph3, 18);
+      @include graphColumn(45px, $graph3, 19);
+      @include graphColumn(54px, $graph3, 20);
+      @include graphColumn(54px, $graph3, 21);
+      @include graphColumn(39px, $graph2, 22);
+      @include graphColumn(39px, $graph2, 23);
+      @include graphColumn(32px, $graph1, 24);
+      @include graphColumn(48px, $graph3, 25);
+      @include graphColumn(38px, $graph1, 26);
+      @include graphColumn(32px, $graph1, 27);
+      @include graphColumn(25px, $graph1, 28);
+      @include graphColumn(17px, $graph1, 29);
+
     } //end columns
 
     .legend {

@@ -1,0 +1,30 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fonts($weight, $size) {
+  font-family: "Open Sans", sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin topContainer {
+  @include fonts(400, 16px);
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+}
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@mixin graphColumn($height, $color, $index) {
+  [data-index="#{$index}"] {
+    height: $height;
+    background-color: $color;
+  }
+}

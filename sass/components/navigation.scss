@@ -1,0 +1,45 @@
+.navigation {
+  @include topContainer;
+  width: 94%;
+  padding-top: 10px;
+
+  &::after {
+    @include clearfix;
+  }
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__list {
+    float: right;
+    list-style: none;
+
+    &__item {
+      float: left;
+      padding: 12px;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        color: $orange;
+        border-bottom: 1px solid $orange;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.collapse {
+  border: 1px solid #666;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 22px;
+
+  &__line {
+    @include size(20px, 2px);
+    display: block;
+    background-color: $orange;
+    margin: 3px 2px;
+  }
+}
