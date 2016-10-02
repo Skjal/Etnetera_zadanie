@@ -1,472 +1,57 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-* {
-  box-sizing: border-box; }
+/*
+Error: File to import not found or unreadable: components/graphs.
+       Load path: C:/Users/Skjal/Documents/Projekty/Etnetera_zadanie/sass
+        on line 24 of C:\Users\Skjal\Documents\Projekty\Etnetera_zadanie\sass\styles.scss
 
-body {
-  margin: 0;
-  padding: 0; }
+19: @import "components/carousel";
+20: 
+21: ////////////////////////// CONTENT
+22: 
+23: @import "components/sections";
+24: @import "components/graphs";
+25: 
+26: footer {
+27:   text-align: center;
+28:   @include fonts(600, 15px);
+29: 
 
-a {
-  text-decoration: none;
-  color: #e84d0f; }
-  a:hover {
-    text-decoration: underline; }
-
-.u-bold {
-  font-weight: 700; }
-
-.u-active {
-  display: block; }
-
-.u-fll {
-  float: left; }
-
-.u-flr {
-  float: right; }
-
-.navigation {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  max-width: 1300px;
-  margin: auto;
-  position: relative;
-  width: 94%;
-  padding-top: 10px; }
-  .navigation::after {
-    content: "";
-    display: table;
-    clear: both; }
-  .navigation__logo {
-    cursor: pointer; }
-  .navigation__list {
-    float: right;
-    list-style: none; }
-    .navigation__list__item {
-      float: left;
-      padding: 12px;
-      border-bottom: 1px solid transparent; }
-      .navigation__list__item:hover {
-        color: #e84d0f;
-        border-bottom: 1px solid #e84d0f;
-        cursor: pointer; }
-
-.collapse {
-  border: 1px solid #666;
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 22px; }
-  .collapse__line {
-    width: 20px;
-    height: 2px;
-    display: block;
-    background-color: #e84d0f;
-    margin: 3px 2px; }
-
-header {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  max-width: 1300px;
-  margin: auto;
-  position: relative;
-  width: 100%;
-  height: 454px;
-  max-height: 454px;
-  background: url("../img/rotator/carousel-bg.jpg") no-repeat center;
-  background-size: cover;
-  margin-top: 30px;
-  overflow: visible; }
-  header:hover {
-    background: url("../img/rotator/carousel-hover.jpg") no-repeat center; }
-  header .arrows {
-    width: 30px;
-    height: 54px;
-    background: url("../img/rotator/arrows.png") no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    top: 43.8%;
-    z-index: 999; }
-  header #arrow-left {
-    position: absolute;
-    left: 37px; }
-    header #arrow-left:hover {
-      background-position: -30px 0; }
-  header #arrow-right {
-    background-position: -90px 0;
-    position: absolute;
-    right: 37px; }
-    header #arrow-right:hover {
-      background-position: -60px 0; }
-  header #carousel {
-    width: 100%;
-    overflow: hidden; }
-    header #carousel #carousel-wrapper {
-      width: 3900px;
-      margin-left: -1300px; }
-      header #carousel #carousel-wrapper .carousel-content {
-        width: 1300px;
-        position: relative;
-        height: 290px;
-        float: left;
-        margin-top: 95px; }
-        header #carousel #carousel-wrapper .carousel-content .carousel-text {
-          font-family: "Open Sans", sans-serif;
-          font-weight: 300;
-          font-size: 18px;
-          max-width: 630px;
-          margin-left: 190px; }
-          header #carousel #carousel-wrapper .carousel-content .carousel-text h2 {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            font-size: 45px;
-            text-shadow: 2px 2px 2px #666; }
-          header #carousel #carousel-wrapper .carousel-content .carousel-text .carousel-para1 {
-            margin-top: 40px; }
-          header #carousel #carousel-wrapper .carousel-content .carousel-text .carousel-para2 {
-            margin-top: 30px; }
-        header #carousel #carousel-wrapper .carousel-content .carousel-button {
-          position: absolute;
-          right: 160px;
-          bottom: 0;
-          padding: 14px 69px;
-          border: 1px solid #e84d0f;
-          border-radius: 46px;
-          background-color: #fff;
-          color: #e84d0f; }
-          header #carousel #carousel-wrapper .carousel-content .carousel-button:hover {
-            background-color: #e84d0f;
-            color: #fff; }
-
-header ~ p {
-  padding: 30px 0;
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 14px; }
-  header ~ p span {
-    margin-right: 5px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    color: #666; }
-  header ~ p a {
-    margin-left: 20px; }
-
-section {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  background-color: #f2f2f2;
-  margin-bottom: 35px;
-  padding-bottom: 35px; }
-  section #graphs-full {
-    display: none; }
-  section #tooltip1 {
-    position: relative;
-    border-bottom: 2px dashed #e84d0f; }
-    section #tooltip1:hover::before {
-      content: "espresso!";
-      background-color: #464646;
-      padding: 4px 20px;
-      position: absolute;
-      bottom: 100%;
-      color: white;
-      border-radius: 3px; }
-    section #tooltip1:hover::after {
-      content: "";
-      position: absolute;
-      bottom: 10px;
-      right: 45px;
-      width: 0;
-      height: 0;
-      border-top: 8px solid #464646;
-      border-bottom: 8px solid transparent;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent; }
-  section #container-article1 {
-    width: 94%;
-    max-width: 990px;
-    margin: auto; }
-    section #container-article1:after {
-      content: "";
-      display: table;
-      clear: both; }
-    section #container-article1 h1 {
-      padding: 30px 0;
-      font-size: 38px;
-      font-weight: 300;
-      display: block; }
-    section #container-article1 img {
-      float: left;
-      margin-right: 10px;
-      margin-bottom: 10px; }
-    section #container-article1 #float-p {
-      float: left; }
-      section #container-article1 #float-p:after {
-        content: "";
-        display: table;
-        clear: both; }
-    section #container-article1 p {
-      padding-bottom: 30px; }
-  section .graph {
-    width: 540px;
-    margin: auto; }
-    section .graph h2 {
-      font-size: 18px;
-      padding: 60px 0 40px 40px; }
-    section .graph img[alt="logo"] {
-      float: left;
-      padding: 19px 10px 0 0; }
-    section .graph .columns {
-      width: 495px;
-      height: 76px;
-      font-size: 0;
-      float: left; }
-      section .graph .columns .column-round, section .graph .columns .column {
-        width: 17px;
-        margin-bottom: -76px;
-        display: inline-block;
-        border-top-left-radius: 17px;
-        border-top-right-radius: 17px;
-        cursor: pointer; }
-      section .graph .columns .column {
-        border-radius: 0px; }
-        section .graph .columns .column:hover {
-          background-color: #666;
-          transition: background-color 0.25s linear; }
-      section .graph .columns [data-index="1"] {
-        height: 25px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="2"] {
-        height: 41px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="3"] {
-        height: 41px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="4"] {
-        height: 36px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="5"] {
-        height: 12px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="6"] {
-        height: 22px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="7"] {
-        height: 36px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="8"] {
-        height: 66px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="9"] {
-        height: 61px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="10"] {
-        height: 51px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="11"] {
-        height: 39px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="12"] {
-        height: 37px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="13"] {
-        height: 34px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="14"] {
-        height: 20px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="15"] {
-        height: 26px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="16"] {
-        height: 39px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="17"] {
-        height: 34px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="18"] {
-        height: 58px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="19"] {
-        height: 45px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="20"] {
-        height: 54px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="21"] {
-        height: 54px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="22"] {
-        height: 39px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="23"] {
-        height: 39px;
-        background-color: #f88c6c; }
-      section .graph .columns [data-index="24"] {
-        height: 32px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="25"] {
-        height: 48px;
-        background-color: #e64e21; }
-      section .graph .columns [data-index="26"] {
-        height: 38px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="27"] {
-        height: 32px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="28"] {
-        height: 25px;
-        background-color: #ffc59b; }
-      section .graph .columns [data-index="29"] {
-        height: 17px;
-        background-color: #ffc59b; }
-    section .graph .legend {
-      text-align: center; }
-      section .graph .legend p {
-        display: inline-block;
-        font-size: 13px; }
-      section .graph .legend .low::before, section .graph .legend .medium::before, section .graph .legend .high::before {
-        content: "";
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-        margin: 0 5px 0 25px;
-        border-radius: 100%;
-        background-color: #ffc59b; }
-      section .graph .legend .medium::before {
-        background-color: #f88c6c; }
-      section .graph .legend .high::before {
-        background-color: #e64e21; }
-  section #container-article2 {
-    width: 94%;
-    max-width: 960px;
-    display: block;
-    margin: auto; }
-    section #container-article2::after {
-      content: "";
-      display: table;
-      clear: both; }
-    section #container-article2 h2 {
-      margin-top: 40px;
-      font-size: 38px;
-      font-weight: 400; }
-    section #container-article2 .article2, section #container-article2 .article3 {
-      max-width: 480px;
-      padding-right: 60px;
-      float: left; }
-      section #container-article2 .article2 p, section #container-article2 .article3 p {
-        margin-top: 30px; }
-    section #container-article2 .article3 {
-      padding-right: 0;
-      padding-left: 60px; }
-
-footer {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 15px; }
-  footer p {
-    margin-top: 17px;
-    margin-bottom: 35px; }
-    footer p:nth-child(3) {
-      font-weight: 300;
-      font-size: 17px; }
-  footer a {
-    margin-top: 35px; }
-
-@media screen and (max-width: 1150px) {
-  header #carousel {
-    overflow: hidden; }
-    header #carousel #carousel-wrapper .carousel-content {
-      margin-top: 1%;
-      height: 310px; }
-      header #carousel #carousel-wrapper .carousel-content .carousel-text {
-        margin-left: 1%;
-        max-width: 50%; }
-      header #carousel #carousel-wrapper .carousel-content .carousel-button {
-        position: static;
-        display: inline-block;
-        margin: 7% 0 0 5%; }
-  header .arrows {
-    width: 15px;
-    height: 27px;
-    top: 85%; }
-  header #arrow-left {
-    position: absolute;
-    left: 37px; }
-    header #arrow-left:hover {
-      background-position: -15px 0; }
-  header #arrow-right {
-    background-position: -45px 0;
-    position: absolute;
-    right: 37px; }
-    header #arrow-right:hover {
-      background-position: -30px 0; }
-
-  section #container-article2 {
-    width: 94%;
-    text-align: center; }
-    section #container-article2 .article2, section #container-article2 .article3, section #container-article2 .article3 {
-      margin: auto;
-      float: none;
-      padding: 0;
-      display: block;
-      text-align: justify; }
-
-  header ~ p {
-    padding: 30px 0;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    font-size: 14px; }
-    header ~ p span {
-      margin: 0 0 5px 0;
-      display: block;
-      text-align: center; }
-    header ~ p a {
-      margin: 5px 0 0 0;
-      display: block;
-      text-align: center; } }
-@media screen and (max-width: 660px) {
-  nav ul {
-    display: none;
-    float: none;
-    margin: auto; }
-    nav ul li {
-      display: block;
-      float: none;
-      border-bottom: 1px solid #e84d0f;
-      text-align: center; }
-  nav #collapse {
-    display: inline-block; }
-
-  header #carousel #carousel-wrapper .carousel-content .carousel-text {
-    width: 20%;
-    text-align: justify; }
-    header #carousel #carousel-wrapper .carousel-content .carousel-text h2 {
-      font-size: 22px;
-      text-shadow: none; }
-  header #carousel #carousel-wrapper .carousel-content .carousel-button {
-    position: static;
-    display: inline-block;
-    margin: 2% 0 0 1%; }
-
-  section #container-article1 {
-    text-align: justify; }
-    section #container-article1 img {
-      width: 100%;
-      float: none;
-      display: block;
-      margin: auto; }
-  section .graph {
-    display: none; }
-  section #graphs-full {
-    width: 90%;
-    margin: auto;
-    display: block; } }
-
-/*# sourceMappingURL=styles.css.map */
+Backtrace:
+C:\Users\Skjal\Documents\Projekty\Etnetera_zadanie\sass\styles.scss:24
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:66:in `rescue in import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:45:in `import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:18:in `load'
+C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: components/graphs.\A        Load path: C:/Users/Skjal/Documents/Projekty/Etnetera_zadanie/sass\A         on line 24 of C:\Users\Skjal\Documents\Projekty\Etnetera_zadanie\sass\styles.scss\A \A 19: @import \"components/carousel\";\A 20: \A 21: ////////////////////////// CONTENT\A 22: \A 23: @import \"components/sections\";\A 24: @import \"components/graphs\";\A 25: \A 26: footer {\A 27:   text-align: center;\A 28:   @include fonts(600, 15px);\A 29: "; }

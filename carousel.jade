@@ -3,17 +3,17 @@
   slide1 = {"heading": "Design", "paragraph1": "Lorem ipsum dolor sit amet.", 
             "paragraph2": "Lorem ipsum.", "button": "Více o design"}
 -
-  slide2 = {"heading": "Design", "paragraph1": "Lorem ipsum dolor sit amet.", 
+  slide2 = {"heading": "Mobile development", "paragraph1": "Lorem ipsum dolor sit amet.", 
             "paragraph2": "Lorem ipsum.", "button": "Více o mobile"} 
 -
-  slide3 = {"heading": "Design", "paragraph1": "Lorem ipsum dolor sit amet.", 
+  slide3 = {"heading": "Computer development", "paragraph1": "Lorem ipsum dolor sit amet.", 
             "paragraph2": "Lorem ipsum.", "button": "Více o computer"}
 
 //- FUNCTIONS
               
 //- make carousel arrow
-mixin arrows(idName, className)
-  div(id=idName, class=className)
+mixin arrows(classNames)
+  div(class=classNames)
 
 //- make carousel slide  
 mixin carouselContent(items)
@@ -27,8 +27,8 @@ mixin carouselContent(items)
     
 //- HTML 
 header
-  +arrows("arrow--left", "arrows")
-  +arrows("arrow--right", "arrows")
+  +arrows("arrow arrow--left")
+  +arrows("arrow arrow--right")
   
   .carousel
     .carousel__wrapper

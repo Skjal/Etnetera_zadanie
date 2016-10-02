@@ -1,0 +1,207 @@
+section {
+  @include fonts(400, 17px);
+  background-color: #f2f2f2;
+  margin-bottom: 35px;
+  padding-bottom: 35px;
+//. --- do graphs
+  #graphs-full {
+    display: none;
+  }
+//.
+  #tooltip1 {
+    position: relative;
+    border-bottom: 2px dashed $orange;
+
+    &:hover::before {
+      content: "espresso!";
+      background-color: #464646;
+      padding: 4px 20px;
+      position: absolute;
+      bottom: 100%;
+      color: white;
+      border-radius: 3px;
+    }
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      right: 45px;
+      width:0;
+      height: 0;
+      border-top: 8px solid #464646;
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+    }
+  }
+
+  #container-article1 {
+    width: 94%;
+    max-width: 990px;
+    margin: auto;
+
+    &:after {
+      @include clearfix;
+    }
+
+    h1 {
+      padding: 30px 0;
+      font-size: 38px;
+      font-weight: 300;
+      display: block;
+    }
+
+    img {
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+//.containerArticle1__article
+    #float-p {
+      float: left;
+
+      &:after {
+        @include clearfix;
+      }
+    }
+
+    p {
+      padding-bottom: 30px;
+    }
+  } //end container article
+
+  .graph {
+    width: 540px;
+    margin: auto;
+
+    h2 {
+      font-size: 18px;
+      padding: 60px 0 40px 40px;
+    }
+
+    img[alt="logo"] {
+      float: left;
+      padding: 19px 10px 0 0;
+    }
+
+    .columns {
+      @include size(495px, 76px);
+      font-size: 0;
+      float: left;
+
+      .column-round {
+        width: 17px;
+        margin-bottom: -76px;
+        display: inline-block;
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+        cursor: pointer;
+      }
+
+      .column {
+        @extend .column-round;
+        border-radius: 0px;
+
+        &:hover {
+          background-color: #666;
+          transition: background-color 0.25s linear;
+        }
+      }
+
+      @include graphColumn(25px, $graph1, 1);
+      @include graphColumn(41px, $graph2, 2);
+      @include graphColumn(41px, $graph2, 3);
+      @include graphColumn(36px, $graph2, 4);
+      @include graphColumn(12px, $graph1, 5);
+      @include graphColumn(22px, $graph1, 6);
+      @include graphColumn(36px, $graph2, 7);
+      @include graphColumn(66px, $graph3, 8);
+      @include graphColumn(61px, $graph3, 9);
+      @include graphColumn(51px, $graph3, 10);
+      @include graphColumn(39px, $graph2, 11);
+      @include graphColumn(37px, $graph2, 12);
+      @include graphColumn(34px, $graph2, 13);
+      @include graphColumn(20px, $graph1, 14);
+      @include graphColumn(26px, $graph1, 15);
+      @include graphColumn(39px, $graph1, 16);
+      @include graphColumn(34px, $graph2, 17);
+      @include graphColumn(58px, $graph3, 18);
+      @include graphColumn(45px, $graph3, 19);
+      @include graphColumn(54px, $graph3, 20);
+      @include graphColumn(54px, $graph3, 21);
+      @include graphColumn(39px, $graph2, 22);
+      @include graphColumn(39px, $graph2, 23);
+      @include graphColumn(32px, $graph1, 24);
+      @include graphColumn(48px, $graph3, 25);
+      @include graphColumn(38px, $graph1, 26);
+      @include graphColumn(32px, $graph1, 27);
+      @include graphColumn(25px, $graph1, 28);
+      @include graphColumn(17px, $graph1, 29);
+
+    } //end columns
+
+    .legend {
+      text-align: center;
+
+      p {
+        display: inline-block;
+        font-size: 13px;
+      }
+
+      .low::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        margin: 0 5px 0 25px;
+        border-radius: 100%;
+        background-color: $graph1;
+      }
+
+      .medium::before {
+        @extend .low::before;
+        background-color: $graph2;
+      }
+
+      .high::before{
+        @extend .low::before;
+        background-color: $graph3;
+      }
+    }
+  } // end graph
+
+  #container-article2 {
+    width: 94%;
+    max-width: 960px;
+    display: block;
+    margin: auto;
+
+    &::after {
+      @include clearfix;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 38px;
+      font-weight: 400;
+    }
+
+    .article2 {
+      max-width: 480px;
+      padding-right: 60px;
+      float: left;
+
+      p {
+        margin-top: 30px;
+      }
+    }
+
+    .article3 {
+      @extend .article2;
+      padding-right: 0;
+      padding-left: 60px;
+    }
+  }// end container-article2
+} //end section
