@@ -32,6 +32,13 @@
         text-align: center;
       }
 
+      &:hover {
+        @media #{$maxW-660} {
+          background: url("../img/graphs/graph-logo.png") no-repeat 95% center, lighten($gray, 50%);
+          background-size: 20px;
+        }
+      }
+
       &:hover span {
         width: 100%;
         display: block;
@@ -49,6 +56,9 @@
         display: block;
         background-color: $orange;
         cursor: pointer;
+        @media #{$maxW-660} {
+          display: none;
+        }
       }
     }//end item
   }//end list

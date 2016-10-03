@@ -77,10 +77,10 @@ header {
       margin-left: -1300px;
 
       &__content {
-        width: 1300px;
-        height: 290px;
+        @include size(1300px, 290px);
         margin-top: 95px;
         float: left;
+        position: relative;
         @media #{$maxW-1150} {
           height: 310px;
           margin-top: 1%;
@@ -131,14 +131,14 @@ header {
           cursor: pointer;
           @media #{$maxW-1150} {
             right: inherit;
-            left: 50%;
+            left: 50vw;
             text-align: center;
             @include transform(translate(-50%, 0));
           }
 
           &:hover {
             background-color: $orange;
-            color: #fff;
+            color: $white;
           }
         }
       } //end content
