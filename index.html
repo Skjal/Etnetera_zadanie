@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
   <head>
     <meta charset="utf-8">
     <title>Etnetera</title>
-    <meta name="keywords" content="káva, etnetera, mobile development, web development,">
+    <meta name="keywords" content="káva, etnetera, mobile development, web development">
     <meta name="description" content="Lorem ipsum Etnetera">
     <meta property="og:title" content="Etnetera">
     <meta property="og:image" content="http://www.etnetera.cz/assets/images/socials.jpg">
@@ -13,212 +13,275 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <img src="img/logo.png" alr="Etnetera logo" />
-      <ul>
-        <li>DOMŮ</li>
-        <li>KDO JSME</li>
-        <li>CO DĚLÁME</li>
-        <li>REFERENCE</li>
-        <li>PRÁCE U NÁS</li>
-        <li>KONTAKT</li>
-      </ul><!--end nav-list-->
-      <div id="collapse">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div><!-- end div collapse -->
+    <nav class="navigation"><img src="img/logo.png" alt="Etnetera logo" class="navigation__logo">
+          <ul class="navigation__list">
+            <li class="navigation__list__item">DOMŮ<span></span></li>
+            <li class="navigation__list__item">CO DĚLÁME<span></span></li>
+            <li class="navigation__list__item">KDO JSME<span></span></li>
+            <li class="navigation__list__item">REFERENCE<span></span></li>
+            <li class="navigation__list__item">PRÁCE U NÁS<span></span></li>
+            <li class="navigation__list__item">KONTAKT<span></span></li>
+          </ul>
+      <div class="collapse"><span class="collapse__line"></span><span class="collapse__line"></span><span class="collapse__line"></span>
+      </div>
     </nav>
     <header>
-      <div id="arrow-left" class="arrows">
+      <div class="headerBg"></div>
+          <div class="arrow arrow--left"></div>
+          <div class="arrow arrow--right"></div>
+      <div class="carousel">
+        <div class="carousel__wrapper">
+              <div class="carousel__wrapper__content">
+                <div class="carousel__wrapper__content__text">
+                  <h2 class="carousel__wrapper__content__text__heading">Design</h2>
+                  <p class="carousel__wrapper__content__text__paragraph1">Lorem ipsum dolor sit amet.</p>
+                  <p class="carousel__wrapper__content__text__paragraph2">Lorem ipsum.</p>
+                </div>
+                <div class="carousel__wrapper__content__button">
+                  <p>Více o design</p>
+                </div>
+              </div>
+              <div class="carousel__wrapper__content">
+                <div class="carousel__wrapper__content__text">
+                  <h2 class="carousel__wrapper__content__text__heading">Mobile development</h2>
+                  <p class="carousel__wrapper__content__text__paragraph1">Lorem ipsum dolor sit amet.</p>
+                  <p class="carousel__wrapper__content__text__paragraph2">Lorem ipsum.</p>
+                </div>
+                <div class="carousel__wrapper__content__button">
+                  <p>Více o mobile</p>
+                </div>
+              </div>
+              <div class="carousel__wrapper__content">
+                <div class="carousel__wrapper__content__text">
+                  <h2 class="carousel__wrapper__content__text__heading">Computer development</h2>
+                  <p class="carousel__wrapper__content__text__paragraph1">Lorem ipsum dolor sit amet.</p>
+                  <p class="carousel__wrapper__content__text__paragraph2">Lorem ipsum.</p>
+                </div>
+                <div class="carousel__wrapper__content__button">
+                  <p>Více o computer</p>
+                </div>
+              </div>
+        </div>
       </div>
-      <div id="arrow-right" class="arrows">
-      </div>
-      <div id="carousel">
-        <div id="carousel-wrapper">
-          <div class="carousel-content">
-            <div class="carousel-text">
-              <h2>Design</h2>
-              <p class="carousel-para1">Lorem ipsum dolor sit amet.</p>
-              <p class="carousel-para2">Lorem ipsum.</p>
-            </div><!-- end carousel-text -->
-            <div class="carousel-button">
-              <p>Více o design</p>
-            </div>
-          </div><!--end carousel-content-->
-          <div class="carousel-content">
-            <div class="carousel-text">
-              <h2>Mobile development</h2>
-              <p class="carousel-para1">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
-              <p class="carousel-para2">Dramatically maintain clicks-and-mortar solutions without functionalsolutions.</p>
-            </div><!-- end carousel-text -->
-            <div class="carousel-button">
-              <p>Více o mobile</p>
-            </div>
-          </div><!--end carousel-content-->
-          <div class="carousel-content">
-            <div class="carousel-text">
-              <h2>Computer development</h2>
-              <p class="carousel-para1">Lorem ipsum.</p>
-              <p class="carousel-para2">Lorem ipsum dolor sit amet.</p>
-            </div><!-- end carousel-text -->
-            <div class="carousel-button">
-              <p>Více o computer</p>
-            </div>
-          </div><!--end carousel-content-->
-        </div><!--end wrapper -->
-      </div><!-- end carousel -->
     </header>
-    <p><span>PŘED 12 DNY</span>Jiří Štěpán z Etnetera Activate poodhalil zákulisí vykutálené náborové kampaně. <a href="#">Přečíst</a></p>
     <section>
-      <div id="container-article1">
-        <h1>Fronty u kávovaru</h1>
-        <img src="img/cup.jpg" alt="picture of cup" />
-        <div id="float-p">
+      <p class="newsParagraph"><span class="newsParagraph__date">PŘED 12 DNY</span> Jiří Štěpán z Etnetera Activate poodhalil zákulisí vykutálené náborové kampaně. <a href="#" class="newsParagraph__anchor">Přečíst</a></p>
+      <article class="containerArticle1">
+        <h1 class="containerArticle1__heading">Fronty u kávovaru</h1><img src="img/cup.jpg" alt="picture of cup" class="containerArticle1__image u-fll">
+        <div class="containerArticle1__article">
           <p>
             Arabica latte shop macchiato doppio coffee steamed. Brewed, macchiato grounds medium, eu breve grinder frappuccino americano.
             Pumpkin spice, caffeine chicory dark medium arabica macchiato instant rich. Et, single shot aged half and half lungo whipped,
             cinnamon cappuccino whipped id mazagran.
           </p>
-          <p>
-            <span class="bold">Con panna</span> sugar macchiato so macchiato in skinny variety mug that. A plunger pot acerbic, brewed medium java aromatic coffee.
+          <p><span class="u-bold">Con panna </span> sugar macchiato so macchiato in skinny variety mug that. A plunger pot acerbic, brewed medium java aromatic coffee.
             At mocha wings acerbic beans medium saucer.
             Cup extra sit half and half robust java crema turkish.
           </p>
-      </div>
-        <p>
-          Medium aroma cream qui medium coffee arabica, caffeine et <a href="#">caramelization cup</a> plunger pot. Eu, plunger pot organic dark, cinnamon,
+        </div>
+        <p>Medium aroma cream qui medium coffee arabica, caffeine et <a href="#">caramelization cup </a> plunger pot. Eu, plunger pot organic dark, cinnamon,
           redeye wings fair trade whipped lungo crema. Carajillo caramelization americano, plunger pot, filter coffee foam siphon roast and java.
         </p>
         <p>
           Galão a, breve, at white, latte variety irish at flavour barista.
-          Half and half, so, sweet, <span id="tooltip1">affogato galão</span>, half and half sugar irish trifecta chicory.
+          Half and half, so, sweet, <span class="tooltip">affogato galão, </span> half and half sugar irish trifecta chicory.
           Single origin, espresso, con panna french press et steamed robust.
         </p>
-      </div><!--end container article -->
-      <img src="img/graphs/graphs-full.jpg" alt="graphs image" id="graphs-full" />
-      <div class="graph">
-        <h2>Pondělí</h2>
-        <img src="img/graphs/graph-logo.svg" alt="logo" />
-        <div class="columns">
-          <div class="column-round" data-index="1"></div>
-          <div class="column-round" data-index="2"></div>
-          <div class="column-round" data-index="3"></div>
-          <div class="column-round" data-index="4"></div>
-          <div class="column-round" data-index="5"></div>
-          <div class="column-round" data-index="6"></div>
-          <div class="column-round" data-index="7"></div>
-          <div class="column-round" data-index="8"></div>
-          <div class="column-round" data-index="9"></div>
-          <div class="column-round" data-index="10"></div>
-          <div class="column-round" data-index="11"></div>
-          <div class="column-round" data-index="12"></div>
-          <div class="column-round" data-index="13"></div>
-          <div class="column-round" data-index="14"></div>
-          <div class="column-round" data-index="15"></div>
-          <div class="column-round" data-index="16"></div>
-          <div class="column-round" data-index="17"></div>
-          <div class="column-round" data-index="18"></div>
-          <div class="column-round" data-index="19"></div>
-          <div class="column-round" data-index="20"></div>
-          <div class="column-round" data-index="21"></div>
-          <div class="column-round" data-index="22"></div>
-          <div class="column-round" data-index="23"></div>
-          <div class="column-round" data-index="24"></div>
-          <div class="column-round" data-index="25"></div>
-          <div class="column-round" data-index="26"></div>
-          <div class="column-round" data-index="27"></div>
-          <div class="column-round" data-index="28"></div>
-          <div class="column-round" data-index="29"></div>
-        </div>
-        <img src="img/graphs/times.png" alt="times" />
-        <div class="legend" >
-          <p class="low">bez fronty</p>
-          <p class="medium">možnost fronty</p>
-          <p class="high">pravděpodobné čekání ve frontě</p>
-        </div>
-      </div>
-      <div class="graph">
-        <h2>Pondělí</h2>
-        <img src="img/graphs/graph-logo.svg" alt="logo" />
-        <div class="columns">
-          <div class="column" data-index="1"></div>
-          <div class="column" data-index="2"></div>
-          <div class="column" data-index="3"></div>
-          <div class="column" data-index="4"></div>
-          <div class="column" data-index="5"></div>
-          <div class="column" data-index="6"></div>
-          <div class="column" data-index="7"></div>
-          <div class="column" data-index="8"></div>
-          <div class="column" data-index="9"></div>
-          <div class="column" data-index="10"></div>
-          <div class="column" data-index="11"></div>
-          <div class="column" data-index="12"></div>
-          <div class="column" data-index="13"></div>
-          <div class="column" data-index="14"></div>
-          <div class="column" data-index="15"></div>
-          <div class="column" data-index="16"></div>
-          <div class="column" data-index="17"></div>
-          <div class="column" data-index="18"></div>
-          <div class="column" data-index="19"></div>
-          <div class="column" data-index="20"></div>
-          <div class="column" data-index="21"></div>
-          <div class="column" data-index="22"></div>
-          <div class="column" data-index="23"></div>
-          <div class="column" data-index="24"></div>
-          <div class="column" data-index="25"></div>
-          <div class="column" data-index="26"></div>
-          <div class="column" data-index="27"></div>
-          <div class="column" data-index="28"></div>
-          <div class="column" data-index="29"></div>
-        </div>
-        <img src="img/graphs/times.png" alt="times" />
-        <div class="legend" >
-          <p class="low">bez fronty</p>
-          <p class="medium">možnost fronty</p>
-          <p class="high">pravděpodobné čekání ve frontě</p>
-        </div>
-      </div><!-- end graph -->
-      <div id="container-article2">
-        <h2>Více o kávě</h2>
-        <div class="article2">
-          <p>
-            Shop robust café au lait, cortado that, kopi-luwak skinny sweet crema fair <span class="bold">trade aged</span>,
-            cultivar medium decaffeinated medium siphon crema cappuccino macchiato froth roast cinnamon aroma crema.
+      </article><img src="img/graphs/graphs-full.jpg" alt="graphs image" class="graphsFull">
+            <div class="graph">
+              <h2 class="graph__heading">Pondělí</h2><img src="img/graphs/graph-logo.png" alt="logo" class="graph__logo u-fll">
+              <div class="graph__columns">
+                <div data-index="1" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">8:00</span>
+                </div>
+                <div data-index="2" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="3" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">9:00</span>
+                </div>
+                <div data-index="4" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="5" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">10:00</span>
+                </div>
+                <div data-index="6" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="7" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">11:00</span>
+                </div>
+                <div data-index="8" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="9" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">12:00</span>
+                </div>
+                <div data-index="10" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="11" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">13:00</span>
+                </div>
+                <div data-index="12" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="13" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">14:00</span>
+                </div>
+                <div data-index="14" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="15" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">15:00</span>
+                </div>
+                <div data-index="16" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="17" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">16:00</span>
+                </div>
+                <div data-index="18" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="19" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">17:00</span>
+                </div>
+                <div data-index="20" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="21" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">18:00</span>
+                </div>
+                <div data-index="22" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="23" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">19:00</span>
+                </div>
+                <div data-index="24" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="25" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">20:00</span>
+                </div>
+                <div data-index="26" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="27" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">21:00</span>
+                </div>
+                <div data-index="28" class="graph__columns__column graph__columns__column--round">
+                </div>
+                <div data-index="29" class="graph__columns__column graph__columns__column--round"><span class="graph__columns__column__label">22:00</span>
+                </div>
+              </div>
+              <div class="u-clearfix"></div>
+              <div class="graph__legend">
+                <p class="graph__legend__low">
+                   
+                  bez fronty
+                </p>
+                <p class="graph__legend__medium">
+                   
+                  možnost fronty
+                </p>
+                <p class="graph__legend__high">
+                   
+                  pravděpodobné čekání ve frontě
+                </p>
+              </div>
+            </div>
+            <div class="graph">
+              <h2 class="graph__heading">Pondělí</h2><img src="img/graphs/graph-logo.png" alt="logo" class="graph__logo u-fll">
+              <div class="graph__columns">
+                <div data-index="1" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">8:00</span>
+                </div>
+                <div data-index="2" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="3" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">9:00</span>
+                </div>
+                <div data-index="4" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="5" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">10:00</span>
+                </div>
+                <div data-index="6" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="7" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">11:00</span>
+                </div>
+                <div data-index="8" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="9" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">12:00</span>
+                </div>
+                <div data-index="10" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="11" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">13:00</span>
+                </div>
+                <div data-index="12" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="13" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">14:00</span>
+                </div>
+                <div data-index="14" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="15" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">15:00</span>
+                </div>
+                <div data-index="16" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="17" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">16:00</span>
+                </div>
+                <div data-index="18" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="19" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">17:00</span>
+                </div>
+                <div data-index="20" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="21" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">18:00</span>
+                </div>
+                <div data-index="22" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="23" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">19:00</span>
+                </div>
+                <div data-index="24" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="25" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">20:00</span>
+                </div>
+                <div data-index="26" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="27" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">21:00</span>
+                </div>
+                <div data-index="28" class="graph__columns__column graph__columns__column--square">
+                </div>
+                <div data-index="29" class="graph__columns__column graph__columns__column--square"><span class="graph__columns__column__label">22:00</span>
+                </div>
+              </div>
+              <div class="u-clearfix"></div>
+              <div class="graph__legend">
+                <p class="graph__legend__low">
+                   
+                  bez fronty
+                </p>
+                <p class="graph__legend__medium">
+                   
+                  možnost fronty
+                </p>
+                <p class="graph__legend__high">
+                   
+                  pravděpodobné čekání ve frontě
+                </p>
+              </div>
+            </div>
+      <article class="containerArticle2">
+        <h2 class="containerArticle2__heading">Více o kávě</h2>
+        <div class="containerArticle2__article containerArticle2__article--left u-fll">
+          <p>Shop robust café au lait, cortado that, kopi-luwak skinny sweet crema fair <span class="u-bold"> trade aged</span> cultivar medium decaffeinated medium siphon crema cappuccino macchiato froth roast cinnamon aroma crema.
             Con panna americano skinny blue mountain decaffeinated, trifecta barista sugar, in saucer in filter that.
-            Roast sit, robusta aged spoon, filter beans blue mountain milk crema dark eu <a href="#">affogato barista</a> caffeine grinder,
-            aromatic instant cup as robusta steamed doppio. Aftertaste, kopi-luwak, cappuccino siphon beans galão decaffeinated mug,
-            froth half and <span class="bold">half eu java roast</span>, lungo, id fair trade organic doppio filter instant carajillo.
+            Roast sit, robusta aged spoon, filter beans blue mountain milk crema dark eu <a href="#"> affogato barista</a> caffeine grinder, aromatic instant cup as robusta steamed doppio. Aftertaste, kopi-luwak, cappuccino siphon beans galão decaffeinated mug,
+            froth half and <span class="u-bold"> half eu java roast, </span> lungo, id fair trade organic doppio filter instant carajillo.
           </p>
           <p>
             Id siphon and, java, cappuccino milk cortado, siphon macchiato galão a irish flavour.
             Carajillo irish percolator steamed, medium galão latte, mocha est, medium, iced cappuccino americano, caramelization ristretto,
-            in latte, flavour cup roast trifecta aged. Variety single origin steamed, at, galão bar turkish con panna cream aroma variety carajillo doppio
+            in latte, flavour cup roast trifecta aged. Variety single origin steamed, at, galão bar turkish con panna cream aroma variety carajillo
           </p>
         </div>
-        <div class="article3">
+        <div class="containerArticle2__article containerArticle2__article--right u-fll">
           <p>
+             
             cinnamon. Iced, single shot, est cup shop viennese dark crema macchiato wings single shot plunger pot foam aftertaste so to go
             white at acerbic a aftertaste.
           </p>
           <p>
+             
             Irish carajillo decaffeinated instant, pumpkin spice as, cup, dripper strong breve, est white crema viennese latte.
             Irish cup medium body organic, white americano galão plunger pot coffee, robust, carajillo, steamed, cream, java,
             cinnamon mazagran so caffeine latte flavour. Shop, turkish iced qui that steamed sweet, mazagran, macchiato est robusta spoon as,
-            rich eu crema, chicory foam single shot organic sugar galão seasonal trifecta. Viennese half and half organic aged <a href="#">extraction cup</a>,
-            espresso irish latte mug grinder turkish variety.
+            rich eu crema, chicory foam single shot organic sugar galão seasonal trifecta. Viennese half and half organic aged <a href="#"> extraction cup,</a> espresso irish latte mug grinder turkish variety.      
           </p>
         </div>
-      </div><!-- end container-article2 -->
+      </article>
     </section>
-    <footer>
-      <a href="#">COPYRIGHT</a>
-      <p>&copy; ETNETERA</p>
-      <p>Jsme hrdým členem <a href="#" >Etnetera Group</a></p>
+    <footer><a href="#">COPYRIGHT</a>
+      <p>&copy; 2015 ETNETERA</p>
+      <p>
+         
+        Jsme hrdým členem <a href="#">Etnetera Group</a>
+      </p>
     </footer>
-
-  <script src="scripts/jquery-1.11.3.js"></script>
-  <script src="scripts/js.js"></script>
+    <script src="scripts/jquery-1.11.3.js"></script>
+    <script src="scripts/js.js"></script>
   </body>
-
 </html>
