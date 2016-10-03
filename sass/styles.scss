@@ -19,21 +19,20 @@
 @import "components/carousel";
 
 ////////////////////////// CONTENT
-
 @import "components/sections";
 @import "components/graphs";
 
+////////////////////////// FOOTER
 footer {
   text-align: center;
   @include fonts(600, 15px);
 
   p {
-    margin-top: 17px;
+    margin-top: 12px;
     margin-bottom: 35px;
 
     &:nth-child(3) {
-      font-weight: 300;
-      font-size: 17px;
+      @include fonts(300, 17px);
     }
   }
 
@@ -41,5 +40,3 @@ footer {
     margin-top: 35px;
   }
 }
-
-@import "responsive";

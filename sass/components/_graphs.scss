@@ -1,0 +1,136 @@
+//graphsFull is image displayed at 660px
+.graphsFull {
+  display: none;
+  @media #{$maxW-660} {
+    width: 95%;
+    margin: auto;
+    display: block;
+  }
+}
+
+.graph {
+  width: 540px;
+  margin: auto;
+  @media #{$maxW-660} {
+    display: none;
+  }
+
+  &__heading {
+    font-size: 18px;
+    padding: 60px 0 40px 40px;
+  }
+
+  &__logo {
+    padding: 34px 10px 0 0;
+  }
+
+  &__columns {
+    @include size(495px, 76px);
+    font-size: 0;
+    line-height: 0;
+    float: left;
+
+    &__column {
+      width: 17px;
+      margin-bottom: -76px;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+
+      &:first-of-type span::after {
+        content: "";
+        @include size(20px, 20px);
+        position: absolute;
+        top: -40px;
+        left: 2.5px;
+        background-image: url("../img/graphs/clock.png");
+        background-size: contain;
+        @include transform(rotate(90deg));
+      }
+
+      &__label {
+        position: absolute;
+        bottom: -40px;
+        right: 0;
+        @include fonts(600, 13px);
+        @include transform(rotate(-90deg));
+      }
+
+      &--round {
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+      }
+
+      &--square {
+        border-radius: 0px;
+
+        &:hover {
+          background-color: $gray;
+          transition: background-color 0.25s linear;
+        }
+      }//end square
+    }//end column
+
+    //create cols (could generate at random but I wanted to be as close to psd as possible)
+    @include graphColumn(25px, $graph1, 1);
+    @include graphColumn(41px, $graph2, 2);
+    @include graphColumn(41px, $graph2, 3);
+    @include graphColumn(36px, $graph2, 4);
+    @include graphColumn(12px, $graph1, 5);
+    @include graphColumn(22px, $graph1, 6);
+    @include graphColumn(36px, $graph2, 7);
+    @include graphColumn(66px, $graph3, 8);
+    @include graphColumn(61px, $graph3, 9);
+    @include graphColumn(51px, $graph3, 10);
+    @include graphColumn(39px, $graph2, 11);
+    @include graphColumn(37px, $graph2, 12);
+    @include graphColumn(34px, $graph2, 13);
+    @include graphColumn(20px, $graph1, 14);
+    @include graphColumn(26px, $graph1, 15);
+    @include graphColumn(39px, $graph1, 16);
+    @include graphColumn(34px, $graph2, 17);
+    @include graphColumn(58px, $graph3, 18);
+    @include graphColumn(45px, $graph3, 19);
+    @include graphColumn(54px, $graph3, 20);
+    @include graphColumn(54px, $graph3, 21);
+    @include graphColumn(39px, $graph2, 22);
+    @include graphColumn(39px, $graph2, 23);
+    @include graphColumn(32px, $graph1, 24);
+    @include graphColumn(48px, $graph3, 25);
+    @include graphColumn(38px, $graph1, 26);
+    @include graphColumn(32px, $graph1, 27);
+    @include graphColumn(25px, $graph1, 28);
+    @include graphColumn(17px, $graph1, 29);
+
+  } //end columns
+
+  &__legend {
+    margin-top: 80px;
+    text-align: center;
+
+    p {
+      display: inline-block;
+      font-size: 13px;
+    }
+
+    &__low::before {
+      content: "";
+      @include size(16px, 16px);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px 0 30px;
+      border-radius: 100%;
+      background-color: $graph1;
+    }
+    &__medium::before {
+      @extend .graph__legend__low::before;
+      background-color: $graph2;
+    }
+
+    &__high::before {
+      @extend .graph__legend__low::before;
+      background-color: $graph3;
+    }
+
+  }//end legend
+} // end graph

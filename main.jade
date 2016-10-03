@@ -15,16 +15,27 @@ html(lang="cs")
     link(href="css/reset.css", rel="stylesheet") 
     link(href="css/styles.css", rel="stylesheet")
   body
-       
-    include ./nav.jade
     
-    include ./carousel.jade
+    //- navigation   
+    include ./templates/nav.jade
     
-    include ./sectionTop.jade
+    //- carousel
+    include ./templates/carousel.jade
     
-    include ./graphs.jade
+    //- main content
+    section
+      include ./templates/sectionTop.jade
+      include ./templates/graphs.jade
+      include ./templates/sectionBottom.jade
     
-    include ./sectionBottom.jade
-    
+    //- footer
+    footer
+      a(href="#") COPYRIGHT
+      p &copy; 2015 ETNETERA
+      p 
+        | Jsme hrdým členem 
+        a(href="#") Etnetera Group
+  
+    //- scripts
     script(src="scripts/jquery-1.11.3.js")
     script(src="scripts/js.js")
