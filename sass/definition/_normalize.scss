@@ -33,12 +33,9 @@ a {
   &:hover::after {
     content: "";
     @include size(0,0);
+    @include triangle(8px, "top", $darkGray);
     position: absolute;
     bottom: 10px;
     right: 50px;
-    border-top: 8px solid $darkGray;
-    border-bottom: 8px solid transparent;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
   }
 }

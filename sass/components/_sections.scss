@@ -19,9 +19,9 @@ section {
   }
 
   &__heading {
+    @include fonts(300, 48px);
     padding: 30px 0;
     display: block;
-    @include fonts(300, 48px);
     line-height: 1;
     @media #{$maxW-660} {
       font-size: 36px;
@@ -56,8 +56,8 @@ section {
   }
 
   &__heading {
-    margin-top: 40px;
     @include fonts(300, 36px);
+    margin-top: 40px;
     @media #{$maxW-660} {
       margin-top: 60px;
       line-height: 1;

@@ -29,6 +29,11 @@
   }
 }
 
+@mixin triangle($size, $borderDirection, $color) {
+  border: $size solid transparent;
+  border-#{$borderDirection}: $size solid $color;
+}
+
 @mixin transform($transforms) {
   -moz-transform: $transforms;
   -o-transform: $transforms;

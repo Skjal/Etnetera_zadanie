@@ -132,10 +132,10 @@
     white-space: nowrap;
     cursor: pointer;
     @media #{$maxW-1150} {
+      @include transform(translate(-50%, 0));
       right: inherit;
       left: 50vw;
       text-align: center;
-      @include transform(translate(-50%, 0));
     }
 
     &:hover {
@@ -146,9 +146,9 @@
 }//end carousel
 
 .newsParagraph {
+  @include fonts(300, 16px);
   padding: 30px 0;
   text-align: center;
-  @include fonts(300, 16px);
   background-color: $white;
   @media #{$maxW-1150} {
     padding: 30px 10px;
@@ -156,8 +156,8 @@
   }
 
   &__date {
-    margin-right: 5px;
     @include fonts(300, 12px);
+    margin-right: 5px;
     color: $gray;
     @media #{$maxW-1150} {
       margin: 0 0 5px 0;

@@ -72,64 +72,72 @@
     &:first-of-type .graph__label::after {
       content: "";
       @include size(20px, 20px);
+      @include transform(rotate(90deg));
       position: absolute;
       top: -40px;
       left: 2.5px;
       background-image: url("../img/graphs/clock.png");
       background-size: contain;
-      @include transform(rotate(90deg));
     }
 
     &--round {
       border-top-left-radius: 17px;
       border-top-right-radius: 17px;
+
+      &:hover::before {
+        content: "";
+        @include transform(translateX(-50%));
+        @include triangle(5px, "top", $gray);
+        position: absolute;
+        top: -7px;
+        left: 50%;
+      }
     }
 
     &--square {
       border-radius: 0px;
 
       &:hover {
-        background-color: $gray;
-        transition: background-color 0.25s linear;
+        @extend .graph__column--round:hover;
       }
-    }//end square
+    }
   }//end column
 
   &__label {
+    @include fonts(600, 13px);
+    @include transform(rotate(-90deg));
+    height: 0;
     position: absolute;
     bottom: -40px;
     right: 0;
-    @include fonts(600, 13px);
-    @include transform(rotate(-90deg));
   }
 
   &__legend {
     margin-top: 80px;
     text-align: center;
+  }
 
-    p {
-      display: inline-block;
-      font-size: 13px;
-    }
+  &__legendItem {
+    display: inline-block;
+    font-size: 13px;
 
-    &__low::before {
+    &--low::before {
       content: "";
       @include size(16px, 16px);
       display: inline-block;
       vertical-align: middle;
-      margin: 0 5px 0 30px;
+      margin: 0 5px 0 35px;
       border-radius: 100%;
       background-color: $graph1;
     }
-    &__medium::before {
-      @extend .graph__legend__low::before;
+    &--medium::before {
+      @extend .graph__legendItem--low::before;
       background-color: $graph2;
     }
 
-    &__high::before {
-      @extend .graph__legend__low::before;
+    &--high::before {
+      @extend .graph__legendItem--low::before;
       background-color: $graph3;
     }
-
-  }//end legend
+  }// end legendItem
 } // end graph
