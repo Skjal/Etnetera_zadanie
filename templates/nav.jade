@@ -3,15 +3,15 @@ mixin makeList()
   ul.navigation__list
     - listItems = Array.prototype.slice.call(arguments);
     for item in listItems
-        li.navigation__list__item= item
-          span
+        li.navigation__item= item
+          span.navigation__itemUnderline
      
 //- HTML
 nav.navigation
   img.navigation__logo(src="img/logo.png", alt="Etnetera logo")
-  
+
   +makeList("DOMŮ", "CO DĚLÁME", "KDO JSME", "REFERENCE", "PRÁCE U NÁS", "KONTAKT")
-  
+
   .collapse
     - i = 0
     while i < 3

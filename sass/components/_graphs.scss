@@ -60,48 +60,48 @@
     font-size: 0;
     line-height: 0;
     float: left;
-
-    &__column {
-      width: 17px;
-      margin-bottom: -76px;
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-
-      &:first-of-type span::after {
-        content: "";
-        @include size(20px, 20px);
-        position: absolute;
-        top: -40px;
-        left: 2.5px;
-        background-image: url("../img/graphs/clock.png");
-        background-size: contain;
-        @include transform(rotate(90deg));
-      }
-
-      &__label {
-        position: absolute;
-        bottom: -40px;
-        right: 0;
-        @include fonts(600, 13px);
-        @include transform(rotate(-90deg));
-      }
-
-      &--round {
-        border-top-left-radius: 17px;
-        border-top-right-radius: 17px;
-      }
-
-      &--square {
-        border-radius: 0px;
-
-        &:hover {
-          background-color: $gray;
-          transition: background-color 0.25s linear;
-        }
-      }//end square
-    }//end column
   } //end columns
+
+  &__column {
+    width: 17px;
+    margin-bottom: -76px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    &:first-of-type .graph__label::after {
+      content: "";
+      @include size(20px, 20px);
+      position: absolute;
+      top: -40px;
+      left: 2.5px;
+      background-image: url("../img/graphs/clock.png");
+      background-size: contain;
+      @include transform(rotate(90deg));
+    }
+
+    &--round {
+      border-top-left-radius: 17px;
+      border-top-right-radius: 17px;
+    }
+
+    &--square {
+      border-radius: 0px;
+
+      &:hover {
+        background-color: $gray;
+        transition: background-color 0.25s linear;
+      }
+    }//end square
+  }//end column
+
+  &__label {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    @include fonts(600, 13px);
+    @include transform(rotate(-90deg));
+  }
 
   &__legend {
     margin-top: 80px;

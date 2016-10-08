@@ -19,49 +19,49 @@
       float: none;
       margin: auto;
     }
+  }
 
-    &__item {
-      float: left;
-      padding: 12px 12px 0;
+  &__item {
+    float: left;
+    padding: 12px 12px 0;
+    cursor: pointer;
+    @media #{$maxW-660} {
+      padding: 12px;
+      display: block;
+      float: none;
+      border-bottom: 1px solid $orange;
+      text-align: center;
+    }
+
+    &:hover {
+      @media #{$maxW-660} {
+        background: url("../img/graphs/graph-logo.png") no-repeat 95% center, lighten($gray, 50%);
+        background-size: 20px;
+      }
+    }
+
+    &:hover .navigation__itemUnderline {
+      width: 100%;
+      display: block;
+      background-color: $orange;
       cursor: pointer;
       @media #{$maxW-660} {
-        padding: 12px;
-        display: block;
-        float: none;
-        border-bottom: 1px solid $orange;
-        text-align: center;
+        display: none;
       }
+    }
 
-      &:hover {
-        @media #{$maxW-660} {
-          background: url("../img/graphs/graph-logo.png") no-repeat 95% center, lighten($gray, 50%);
-          background-size: 20px;
-        }
+    .navigation__itemUnderline {
+      @include size(0, 1px);
+      @include transition(width 0.3s linear);
+      margin: 11px auto 0;
+      display: block;
+      background-color: $orange;
+      cursor: pointer;
+      @media #{$maxW-660} {
+        display: none;
       }
-
-      &:hover span {
-        width: 100%;
-        display: block;
-        background-color: $orange;
-        cursor: pointer;
-        @media #{$maxW-660} {
-          display: none;
-        }
-      }
-
-      span {
-        @include size(0, 1px);
-        @include transition(width 0.3s linear);
-        margin: 11px auto 0;
-        display: block;
-        background-color: $orange;
-        cursor: pointer;
-        @media #{$maxW-660} {
-          display: none;
-        }
-      }
-    }//end item
-  }//end list
+    }
+  }//end item
 }//end navigation
 
 .collapse {

@@ -23,17 +23,17 @@
 @import "components/graphs";
 
 ////////////////////////// FOOTER
-footer {
+.footer {
   text-align: center;
   @include fonts(600, 15px);
+
+  &__group {
+    @include fonts(300, 17px);
+  }
 
   p {
     margin-top: 12px;
     margin-bottom: 35px;
-
-    &:nth-child(3) {
-      @include fonts(300, 17px);
-    }
   }
 
   a {

@@ -1,38 +1,39 @@
 //- VARIABLES
 -
-  slide1 = {"heading": "Design", "paragraph1": "Lorem ipsum dolor sit amet.", 
-            "paragraph2": "Lorem ipsum.", "button": "Více o design"}
+  slide1 = {"heading": "Design", "description1": "Lorem ipsum dolor sit amet.",
+            "description2": "Lorem ipsum.", "button": "Více o design"}
 -
-  slide2 = {"heading": "Mobile development", "paragraph1": "Lorem ipsum dolor sit amet.", 
-            "paragraph2": "Lorem ipsum.", "button": "Více o mobile"} 
+  slide2 = {"heading": "Mobile development", "description1": "Lorem ipsum dolor sit amet.",
+            "description2": "Lorem ipsum.", "button": "Více o mobile"}
 -
-  slide3 = {"heading": "Computer development", "paragraph1": "Lorem ipsum dolor sit amet.", 
-            "paragraph2": "Lorem ipsum.", "button": "Více o computer"}
+  slide3 = {"heading": "Computer development", "description1": "Lorem ipsum dolor sit amet.",
+            "description2": "Lorem ipsum.", "button": "Více o computer"}
+
+- slides = [slide1, slide2, slide3]
 
 //- FUNCTIONS
-              
+
 //- make carousel arrow
 mixin arrows(classNames)
   div(class=classNames)
 
-//- make carousel slide  
-mixin carouselContent(items)
-  .carousel__wrapper__content
-    .carousel__wrapper__content__text
-      h2.carousel__wrapper__content__text__heading= items.heading
-      p.carousel__wrapper__content__text__paragraph1= items.paragraph1
-      p.carousel__wrapper__content__text__paragraph2= items.paragraph2
-    .carousel__wrapper__content__button
-      p= items.button 
-    
-//- HTML 
-header
-  .headerBg
+//- make carousel slide
+mixin carouselContent(slides)
+  for slide in slides
+    .carousel__content
+      .carousel__text
+        h2.carousel__heading= slide.heading
+        p.carousel__description1= slide.description1
+        p.carousel__description2= slide.description2
+      .carousel__button
+        p= slide.button
+
+//- HTML
+header.header
+  .header__background
   +arrows("arrow arrow--left")
   +arrows("arrow arrow--right")
-  
+
   .carousel
     .carousel__wrapper
-      +carouselContent(slide1)
-      +carouselContent(slide2)
-      +carouselContent(slide3)
+      +carouselContent(slides)

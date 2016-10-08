@@ -7,89 +7,89 @@ section {
   @media #{$maxW-660} {
     text-align: center;
   }
+}
 
-  .containerArticle1 {
-    width: 95%;
-    max-width: 990px;
-    margin: auto;
+.containerArticle1 {
+  width: 95%;
+  max-width: 990px;
+  margin: auto;
 
-    &:after {
-      @include clearfix;
-    }
+  &:after {
+    @include clearfix;
+  }
 
-    &__heading {
-      padding: 30px 0;
-      display: block;
-      @include fonts(300, 48px);
-      line-height: 1;
-      @media #{$maxW-660} {
-        font-size: 36px;
-      }
-    }
-
-    &__image {
-      margin-right: 10px;
-      margin-bottom: 10px;
-      @media #{$maxW-660} {
-        float: none;
-      }
-    }
-
-    &__article::after {
-      @include clearfix;
-    }
-
-    p:not(:last-child) {
-      padding-bottom: 30px;
-    }
-  } //end container article1
-
-  .containerArticle2 {
-    width: 95%;
-    max-width: 960px;
+  &__heading {
+    padding: 30px 0;
     display: block;
-    margin: auto;
+    @include fonts(300, 48px);
+    line-height: 1;
+    @media #{$maxW-660} {
+      font-size: 36px;
+    }
+  }
 
-    &::after {
-      @include clearfix;
+  &__image {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    @media #{$maxW-660} {
+      float: none;
+    }
+  }
+
+  &__article::after {
+    @include clearfix;
+  }
+
+  p:not(:last-child) {
+    padding-bottom: 30px;
+  }
+} //end container article1
+
+.containerArticle2 {
+  width: 95%;
+  max-width: 960px;
+  display: block;
+  margin: auto;
+
+  &::after {
+    @include clearfix;
+  }
+
+  &__heading {
+    margin-top: 40px;
+    @include fonts(300, 36px);
+    @media #{$maxW-660} {
+      margin-top: 60px;
+      line-height: 1;
+    }
+  }
+
+  &__article {
+    width: 50%;
+    max-width: 480px;
+    float: left;
+    @media #{$maxW-660} {
+      width: 100%;
+      float: none;
+      max-width: inherit;
     }
 
-    &__heading {
-      margin-top: 40px;
-      @include fonts(300, 36px);
+    &--left {
+      padding-right: 60px;
       @media #{$maxW-660} {
-        margin-top: 60px;
-        line-height: 1;
+        padding: 0;
       }
     }
 
-    &__article {
-      width: 50%;
-      max-width: 480px;
-      float: left;
+    &--right {
+      padding-left: 60px;
       @media #{$maxW-660} {
-        width: 100%;
-        float: none;
-        max-width: inherit;
+        padding: 0;
       }
+    }
 
-      &--left {
-        padding-right: 60px;
-        @media #{$maxW-660} {
-          padding: 0;
-        }
-      }
-
-      &--right {
-        padding-left: 60px;
-        @media #{$maxW-660} {
-          padding: 0;
-        }
-      }
-
-      p {
-        margin-top: 30px;
-      }
-    }//end article
-  }// end container-article2
-} //end section
+    p {
+      margin-top: 30px;
+    }
+  }//end article
+}// end container-article2

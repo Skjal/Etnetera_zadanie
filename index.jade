@@ -1,6 +1,6 @@
 //output:index.html
 
-doctype 
+doctype
 
 html(lang="cs")
   head
@@ -9,33 +9,33 @@ html(lang="cs")
     meta(name="keywords", content="káva, etnetera, mobile development, web development")
     meta(name="description", content="Lorem ipsum Etnetera")
     meta(property="og:title", content="Etnetera")
-    meta(property="og:image", content="http://www.etnetera.cz/assets/images/socials.jpg") 
+    meta(property="og:image", content="http://www.etnetera.cz/assets/images/socials.jpg")
     meta(property="og:description", content="Lorem ipsum Etnetera")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(href="css/reset.css", rel="stylesheet") 
+    link(href="css/reset.css", rel="stylesheet")
     link(href="css/styles.css", rel="stylesheet")
   body
-    
-    //- navigation   
+
+    //- navigation
     include ./templates/nav.jade
-    
+
     //- carousel
     include ./templates/carousel.jade
-    
+
     //- main content
     section
       include ./templates/sectionTop.jade
       include ./templates/graphs.jade
       include ./templates/sectionBottom.jade
-    
+
     //- footer
-    footer
+    footer.footer
       a(href="#") COPYRIGHT
       p &copy; 2015 ETNETERA
-      p 
-        | Jsme hrdým členem 
-        a(href="#") Etnetera Group
-  
+      p.footer__group
+        | Jsme hrdým členem
+        a(href="#")  Etnetera Group
+
     //- scripts
     script(src="scripts/jquery-1.11.3.js")
     script(src="scripts/js.js")

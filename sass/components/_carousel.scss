@@ -1,15 +1,15 @@
 
-header {
+.header {
   @include size(100%, 454px);
   @include topContainer;
   margin-top: 30px;
   overflow: hidden;
 
-  &:hover .headerBg {
+  &:hover &__background {
     @include transform(scale(1.02));
   }
 
-  .headerBg {
+  &__background {
     @include size(100%, 100%);
     @include transition(all 0.5s linear);
     position: absolute;
@@ -17,134 +17,133 @@ header {
     background-size: cover;
     z-index: 1;
   }
+} //end header
 
-  .arrow {
-    @include size(30px, 54px);
-    background: url("../img/rotator/arrows.png") no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    top: 43.8%;
-    z-index: 999;
+.arrow {
+  @include size(30px, 54px);
+  top: 43.8%;
+  background: url("../img/rotator/arrows.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 999;
+  @media #{$maxW-1150} {
+    @include size(15px, 27px);
+    top: 85%;
+  }
+
+  &--left {
+    position: absolute;
+    left: 37px;
     @media #{$maxW-1150} {
-      @include size(15px, 27px);
-      top: 85%;
-    }
-
-    &--left {
       position: absolute;
       left: 37px;
+    }
+
+    &:hover {
+      background-position: -30px 0;
       @media #{$maxW-1150} {
-        position: absolute;
-        left: 37px;
+        background-position: -15px 0;
       }
+    }
+  }//end left
 
-      &:hover {
-        background-position: -30px 0;
-        @media #{$maxW-1150} {
-          background-position: -15px 0;
-        }
-      }
-    }//end left
-
-    &--right {
-      background-position: -90px 0;
+  &--right {
+    background-position: -90px 0;
+    position: absolute;
+    right: 37px;
+    @media #{$maxW-1150} {
+      background-position: -45px 0;
       position: absolute;
       right: 37px;
+    }
+
+    &:hover {
+      background-position: -60px 0;
       @media #{$maxW-1150} {
-        background-position: -45px 0;
-        position: absolute;
-        right: 37px;
+        background-position: -30px 0;
       }
+    }
+  }//end right
+}//end arrow
 
-      &:hover {
-        background-position: -60px 0;
-        @media #{$maxW-1150} {
-          background-position: -30px 0;
-        }
-      }
-    }//end right
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
 
-  }//end arrow
+  &__wrapper {
+    width: 3900px;
+    margin-left: -1300px;
+  }//end wrapper
 
-  .carousel {
-    width: 100%;
+  &__content {
+    @include size(1300px, 290px);
+    margin-top: 95px;
+    float: left;
     position: relative;
-    overflow: hidden;
-    z-index: 3;
+    @media #{$maxW-1150} {
+      height: 310px;
+      margin-top: 1%;
+    }
+  } //end content
 
-    &__wrapper {
-      width: 3900px;
-      margin-left: -1300px;
+  &__text {
+    @include fonts(300, 20px);
+    max-width: 630px;
+    margin-left: 190px;
+    @media #{$maxW-1150} {
+      max-width: 50%;
+      margin-left: 0;
+      text-align: center;
+      position: relative;
+      left: calc(50vw - 25%);
+    }
+  }// end text
 
-      &__content {
-        @include size(1300px, 290px);
-        margin-top: 95px;
-        float: left;
-        position: relative;
-        @media #{$maxW-1150} {
-          height: 310px;
-          margin-top: 1%;
-        }
+  &__heading {
+    @include fonts(300, 48px);
+    text-shadow: 2px 2px 2px $gray;
+    @media #{$maxW-1150} {
+      font-size: 40px;
+    }
+    @media #{$maxW-660} {
+      font-size: 32px;
+    }
+  }
 
-        &__text {
-          @include fonts(300, 20px);
-          max-width: 630px;
-          margin-left: 190px;
-          @media #{$maxW-1150} {
-            max-width: 50%;
-            margin-left: 0;
-            text-align: center;
-            position: relative;
-            left: calc(50vw - 25%);
-          }
+  &__description1 {
+    margin-top: 40px;
+  }
 
-          &__heading {
-            @include fonts(300, 48px);
-            text-shadow: 2px 2px 2px $gray;
-            @media #{$maxW-1150} {
-              font-size: 40px;
-            }
-            @media #{$maxW-660} {
-              font-size: 32px;
-            }
-          }
+  &__description2 {
+    margin-top: 30px;
+  }
 
-          &__paragraph1 {
-            margin-top: 40px;
-          }
+  &__button {
+    position: absolute;
+    right: 160px;
+    bottom: 0;
+    padding: 14px 69px;
+    border: 1px solid $orange;
+    border-radius: 46px;
+    background-color: $white;
+    color: $orange;
+    white-space: nowrap;
+    cursor: pointer;
+    @media #{$maxW-1150} {
+      right: inherit;
+      left: 50vw;
+      text-align: center;
+      @include transform(translate(-50%, 0));
+    }
 
-          &__paragraph2 {
-            margin-top: 30px;
-          }
-        }
-
-        &__button {
-          position: absolute;
-          right: 160px;
-          bottom: 0;
-          padding: 14px 69px;
-          border: 1px solid $orange;
-          border-radius: 46px;
-          background-color: $white;
-          color: $orange;
-          white-space: nowrap;
-          cursor: pointer;
-          @media #{$maxW-1150} {
-            right: inherit;
-            left: 50vw;
-            text-align: center;
-            @include transform(translate(-50%, 0));
-          }
-
-          &:hover {
-            background-color: $orange;
-            color: $white;
-          }
-        }
-      } //end content
-    }//end wrapper
-  }//end carousel
-} //end header
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }//end button
+}//end carousel
 
 .newsParagraph {
   padding: 30px 0;
@@ -167,7 +166,7 @@ header {
     }
   }
 
-  &__anchor {
+  &__readMore {
     margin-left: 20px;
     @media #{$maxW-1150} {
       margin: 5px 0 0 0;
