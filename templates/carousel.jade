@@ -12,7 +12,6 @@
 - slides = [slide1, slide2, slide3]
 
 //- FUNCTIONS
-
 //- make carousel arrow
 mixin arrows(classNames)
   div(class=classNames)
@@ -33,7 +32,6 @@ header.header
   .header__background
   +arrows("arrow arrow--left")
   +arrows("arrow arrow--right")
-
   .carousel
     .carousel__wrapper
       +carouselContent(slides)

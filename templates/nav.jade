@@ -9,9 +9,7 @@ mixin makeList()
 //- HTML
 nav.navigation
   img.navigation__logo(src="img/logo.png", alt="Etnetera logo")
-
   +makeList("DOMŮ", "CO DĚLÁME", "KDO JSME", "REFERENCE", "PRÁCE U NÁS", "KONTAKT")
-
   .collapse
     - i = 0
     while i < 3

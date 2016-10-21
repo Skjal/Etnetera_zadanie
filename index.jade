@@ -1,8 +1,9 @@
-//output:index.html
+//output:index.html, pretty:false
 
 doctype
 
 html(lang="cs")
+
   head
     meta(charset="utf-8")
     title Etnetera
@@ -14,20 +15,17 @@ html(lang="cs")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(href="css/reset.css", rel="stylesheet")
     link(href="css/styles.css", rel="stylesheet")
-  body
 
+  body
     //- navigation
     include ./templates/nav.jade
-
     //- carousel
     include ./templates/carousel.jade
-
     //- main content
     section
       include ./templates/sectionTop.jade
       include ./templates/graphs.jade
       include ./templates/sectionBottom.jade
-
     //- footer
     footer.footer
       a(href="#") COPYRIGHT
@@ -35,7 +33,6 @@ html(lang="cs")
       p.footer__group
         | Jsme hrdým členem
         a(href="#")  Etnetera Group
-
     //- scripts
     script(src="scripts/jquery-1.11.3.js")
     script(src="scripts/js.js")

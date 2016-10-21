@@ -1,24 +1,20 @@
+//- FUNCTIONS
 mixin createGraph(columnType)
   .graph
     h2.graph__heading Pondělí
     img.graph__logo.u-fll(src="img/graphs/graph-logo.png" alt="logo")
     .graph__columns
-
       - i = 1
       - c = 8
-
       //- generate columns
       while i <= 29
         div(class=columnType, data-index="#{i}")
-
           //- generate column label
           if i % 2
             span(class="graph__label")
               | #{c}:00
             - c++
-
         - i++
-
     .u-clearfix
     .graph__legend
       p.graph__legendItem.graph__legendItem--low
@@ -28,7 +24,7 @@ mixin createGraph(columnType)
       p.graph__legendItem.graph__legendItem--high
         | pravděpodobné čekání ve frontě
 
+//- HTML
 img.graphsFull(src="img/graphs/graphs-full.jpg" alt="graphs image")
-
 +createGraph("graph__column graph__column--round")
 +createGraph("graph__column graph__column--square")

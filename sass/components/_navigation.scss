@@ -2,15 +2,12 @@
   @include topContainer;
   width: 94%;
   padding-top: 10px;
-
   &::after {
     @include clearfix;
   }
-
   &__logo {
     cursor: pointer;
   }
-
   &__list {
     float: right;
     list-style: none;
@@ -20,7 +17,6 @@
       margin: auto;
     }
   }
-
   &__item {
     float: left;
     padding: 12px 12px 0;
@@ -32,14 +28,12 @@
       border-bottom: 1px solid $orange;
       text-align: center;
     }
-
     &:hover {
       @media #{$maxW-660} {
         background: url("../img/graphs/graph-logo.png") no-repeat 95% center, lighten($gray, 50%);
         background-size: 20px;
       }
     }
-
     &:hover .navigation__itemUnderline {
       width: 100%;
       display: block;
@@ -49,7 +43,6 @@
         display: none;
       }
     }
-
     .navigation__itemUnderline {
       @include size(0, 1px);
       @include transition(width 0.3s linear);
@@ -73,11 +66,10 @@
   @media #{$maxW-660} {
     display: inline-block;
   }
-
   &__line {
     @include size(20px, 2px);
     display: block;
     background-color: $orange;
     margin: 3px 2px;
   }
-}
+}//end collapse

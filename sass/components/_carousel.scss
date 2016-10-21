@@ -1,14 +1,12 @@
-
+// HEADER
 .header {
   @include size(100%, 454px);
   @include topContainer;
   margin-top: 30px;
   overflow: hidden;
-
   &:hover &__background {
     @include transform(scale(1.02));
   }
-
   &__background {
     @include size(100%, 100%);
     @include transition(all 0.5s linear);
@@ -30,7 +28,6 @@
     @include size(15px, 27px);
     top: 85%;
   }
-
   &--left {
     position: absolute;
     left: 37px;
@@ -38,15 +35,13 @@
       position: absolute;
       left: 37px;
     }
-
     &:hover {
       background-position: -30px 0;
       @media #{$maxW-1150} {
         background-position: -15px 0;
       }
     }
-  }//end left
-
+  }
   &--right {
     background-position: -90px 0;
     position: absolute;
@@ -56,27 +51,25 @@
       position: absolute;
       right: 37px;
     }
-
     &:hover {
       background-position: -60px 0;
       @media #{$maxW-1150} {
         background-position: -30px 0;
       }
     }
-  }//end right
+  }
 }//end arrow
 
+// SLIDER
 .carousel {
   width: 100%;
   position: relative;
   overflow: hidden;
   z-index: 3;
-
   &__wrapper {
     width: 3900px;
     margin-left: -1300px;
-  }//end wrapper
-
+  }
   &__content {
     @include size(1300px, 290px);
     margin-top: 95px;
@@ -86,8 +79,7 @@
       height: 310px;
       margin-top: 1%;
     }
-  } //end content
-
+  }
   &__text {
     @include fonts(300, 20px);
     max-width: 630px;
@@ -99,8 +91,7 @@
       position: relative;
       left: calc(50vw - 25%);
     }
-  }// end text
-
+  }
   &__heading {
     @include fonts(300, 48px);
     text-shadow: 2px 2px 2px $gray;
@@ -111,15 +102,12 @@
       font-size: 32px;
     }
   }
-
   &__description1 {
     margin-top: 40px;
   }
-
   &__description2 {
     margin-top: 30px;
   }
-
   &__button {
     position: absolute;
     right: 160px;
@@ -137,14 +125,14 @@
       left: 50vw;
       text-align: center;
     }
-
     &:hover {
       background-color: $orange;
       color: $white;
     }
-  }//end button
+  }
 }//end carousel
 
+// NEWS ROW
 .newsParagraph {
   @include fonts(300, 16px);
   padding: 30px 0;
@@ -154,7 +142,6 @@
     padding: 30px 10px;
     text-align: center;
   }
-
   &__date {
     @include fonts(300, 12px);
     margin-right: 5px;
@@ -165,7 +152,6 @@
       text-align: center;
     }
   }
-
   &__readMore {
     margin-left: 20px;
     @media #{$maxW-1150} {

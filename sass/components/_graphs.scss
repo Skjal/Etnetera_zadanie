@@ -14,16 +14,13 @@
   @media #{$maxW-660} {
     display: none;
   }
-
   &__heading {
     font-size: 18px;
     padding: 60px 0 40px 40px;
   }
-
   &__logo {
     padding: 34px 10px 0 0;
   }
-
   //create cols (could generate at random but I wanted to be as close to psd as possible)
   @include graphColumn(25px, $graph1, 1);
   @include graphColumn(41px, $graph2, 2);
@@ -54,21 +51,18 @@
   @include graphColumn(32px, $graph1, 27);
   @include graphColumn(25px, $graph1, 28);
   @include graphColumn(17px, $graph1, 29);
-
   &__columns {
     @include size(495px, 76px);
     font-size: 0;
     line-height: 0;
     float: left;
-  } //end columns
-
+  }
   &__column {
     width: 17px;
     margin-bottom: -76px;
     position: relative;
     display: inline-block;
     cursor: pointer;
-
     &:first-of-type .graph__label::after {
       content: "";
       @include size(20px, 20px);
@@ -79,11 +73,9 @@
       background-image: url("../img/graphs/clock.png");
       background-size: contain;
     }
-
     &--round {
       border-top-left-radius: 17px;
       border-top-right-radius: 17px;
-
       &:hover::before {
         content: "";
         @include transform(translateX(-50%));
@@ -93,16 +85,13 @@
         left: 50%;
       }
     }
-
     &--square {
       border-radius: 0px;
-
       &:hover {
         @extend .graph__column--round:hover;
       }
     }
   }//end column
-
   &__label {
     @include fonts(600, 13px);
     @include transform(rotate(-90deg));
@@ -111,16 +100,13 @@
     bottom: -40px;
     right: 0;
   }
-
   &__legend {
     margin-top: 80px;
     text-align: center;
   }
-
   &__legendItem {
     display: inline-block;
     font-size: 13px;
-
     &--low::before {
       content: "";
       @include size(16px, 16px);
@@ -134,7 +120,6 @@
       @extend .graph__legendItem--low::before;
       background-color: $graph2;
     }
-
     &--high::before {
       @extend .graph__legendItem--low::before;
       background-color: $graph3;
