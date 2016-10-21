@@ -33,19 +33,19 @@
         background: url("../img/graphs/graph-logo.png") no-repeat 95% center, lighten($gray, 50%);
         background-size: 20px;
       }
-    }
-    &:hover .navigation__itemUnderline {
-      width: 100%;
-      display: block;
-      background-color: $orange;
-      cursor: pointer;
-      @media #{$maxW-660} {
-        display: none;
+      .navigation__itemUnderline {
+        width: 100%;
+        display: block;
+        background-color: $orange;
+        cursor: pointer;
+        @media #{$maxW-660} {
+          display: none;
+        }
       }
     }
     .navigation__itemUnderline {
       @include size(0, 1px);
-      @include transition(width 0.3s linear);
+      @include transition(width .3s linear);
       margin: 11px auto 0;
       display: block;
       background-color: $orange;

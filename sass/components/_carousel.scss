@@ -9,7 +9,7 @@
   }
   &__background {
     @include size(100%, 100%);
-    @include transition(all 0.5s linear);
+    @include transition(all .5s linear);
     position: absolute;
     background: url("../img/rotator/carousel-bg.jpg") no-repeat center;
     background-size: cover;
@@ -147,7 +147,7 @@
     margin-right: 5px;
     color: $gray;
     @media #{$maxW-1150} {
-      margin: 0 0 5px 0;
+      margin: 0 0 5px;
       display: block;
       text-align: center;
     }
@@ -155,7 +155,7 @@
   &__readMore {
     margin-left: 20px;
     @media #{$maxW-1150} {
-      margin: 5px 0 0 0;
+      margin: 5px 0 0;
       display: block;
       text-align: center;
     }

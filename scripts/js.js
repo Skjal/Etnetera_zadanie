@@ -46,6 +46,7 @@ $(function() {
   }
 
   // APPS
+  //carousel arrows
   arrowLeft
     .on('click', function() {
       arrow("+=1300", "left");
@@ -69,6 +70,7 @@ $(function() {
         .removeAttr('style');
     });
 
+  //hamburger menu
   burgerMenu
     .on('click', function() {
       toggler(nav);

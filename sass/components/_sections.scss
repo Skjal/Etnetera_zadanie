@@ -1,7 +1,7 @@
 section {
   @include fonts(400, 16px);
   line-height: 24px;
-  background-color: #f2f2f2;
+  background-color: $lightGray;
   margin-bottom: 35px;
   padding-bottom: 35px;
   @media #{$maxW-660} {
@@ -14,7 +14,7 @@ section {
   width: 95%;
   max-width: 990px;
   margin: auto;
-  &:after {
+  &::after {
     @include clearfix;
   }
   &__heading {

@@ -86,7 +86,7 @@
       }
     }
     &--square {
-      border-radius: 0px;
+      border-radius: 0;
       &:hover {
         @extend .graph__column--round:hover;
       }
