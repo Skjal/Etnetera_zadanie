@@ -1,56 +1,76 @@
 $(function() {
 
-  var carouselWrapper = $('.carousel__wrapper');
-  var column = $('[class*="column--round"');
+  // VARIABLES
+  var carouselWrapper = $('.carousel__wrapper'),
+      column =          $('[class*="column--round"'),
+      nav =             $('nav ul'),
+      burgerMenu =      $('.collapse'),
+      arrowLeft =       $('.arrow--left'),
+      arrowRight =      $('.arrow--right');
 
+  // FUNCTIONS
   // carousel arrows functionality
   function arrow(margin, arrowType) {
-    var carouselContent = $('.carousel__wrapper__content');
-
+    var carouselContent = $('.carousel__content');
     if (carouselWrapper.is(':animated')) {
       return false;
-    } else {
-      carouselWrapper.animate({
-        marginLeft: margin
-      }, 500, function() {
-        $(this).removeAttr('style');
-        if (arrowType === 'left') {
-          carouselContent.last().insertBefore(carouselContent.first());
-        } else {
-          carouselContent.first().insertAfter(carouselContent.last());
-        }
-      });
+    }
+    else {
+      carouselWrapper
+        .animate({
+          marginLeft: margin
+          }, 500, function() {
+          $(this)
+            .removeAttr('style');
+          if (arrowType === 'left') {
+            carouselContent
+              .last()
+              .insertBefore(carouselContent.first());
+          } else {
+            carouselContent
+              .first()
+              .insertAfter(carouselContent.last());
+          }
+        });
     }
   }
 
-  $('.arrow--left').on('click', function() {
-    arrow("+=1300", "left");
-  });
+  // mobile menu toggle
+  function toggler(element) {
+    if (element.is(':hidden')) {
+      element.show();
+    }
+    else {
+      element.removeAttr('style');
+    }
+  }
 
-  $('.arrow--right').on('click', function() {
-    arrow("-=1300", "right");
-  });
+  // APPS
+  arrowLeft
+    .on('click', function() {
+      arrow("+=1300", "left");
+    });
+
+  arrowRight
+    .on('click', function() {
+      arrow("-=1300", "right");
+    });
 
   // graph columns interaction
   column
     .on('mouseover', function() {
     var getHeight = $(this).height() + 10;
-
-    $(this).css('height', getHeight);
+    $(this)
+      .css('height', getHeight);
 
     })
     .on('mouseout', function() {
-      $(this).removeAttr('style');
-
+      $(this)
+        .removeAttr('style');
     });
 
-  $('.collapse').on('click', function () {
-    var nav = $('nav ul');
-
-    if (nav.is(':hidden')) {
-      nav.show();
-    } else {
-      nav.removeAttr('style');
-    }
-  });
+  burgerMenu
+    .on('click', function() {
+      toggler(nav);
+    });
 });
