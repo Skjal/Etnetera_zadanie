@@ -1,7 +1,7 @@
 # Etnetera_zadanie
 Test from Etnetera
 
-HTML is generated from Jade(aka pugjs/pug - https://github.com/pugjs/pug) templates.
+HTML is compiled from Jade(aka pugjs/pug - https://github.com/pugjs/pug) templates.
 CSS written in SASS using BEM logic.
 JS written in jQuery.
 
